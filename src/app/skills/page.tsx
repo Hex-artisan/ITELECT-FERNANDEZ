@@ -37,7 +37,7 @@ export default function Skills() {
           </div>
 
           <a 
-            href="https://ianfaith-portfolio.vercel.app/assets/resume-D5_WF39y.pdf"
+            href="https://johnmarkcaya-portfolio.vercel.app/assets/resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-8 py-3 bg-black text-white dark:bg-white dark:text-black rounded-full hover:opacity-80 transition-opacity text-sm font-bold whitespace-nowrap"

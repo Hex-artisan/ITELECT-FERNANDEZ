@@ -5,21 +5,21 @@ export default function Projects() {
   const projects = [
     { 
       id: 1, 
-      title: "App Dev Project IAN", 
+      title: "App Dev Project CAYA", 
       image: "/ai.jpg",
-      link: "https://github.com/Hex-artisan/App-dev-project-IAN.git"
+      link: "https://github.com/Markoy2022/App-dev-project-CAYA.git"
     },
     { 
       id: 2, 
       title: "APPSSS", 
       image: "/work.jpg",
-      link: "https://github.com/Hex-artisan/APPSSS.git"
+      link: "https://github.com/Markoy2022/APPSSS.git"
     },
     { 
       id: 3, 
       title: "Vercel Portfolio", 
       image: "/cat.jpg",
-      link: "https://ianfaith-portfolio.vercel.app/about"
+      link: "https://johnmarkcaya-portfolio.vercel.app/about"
     },
   ];
 

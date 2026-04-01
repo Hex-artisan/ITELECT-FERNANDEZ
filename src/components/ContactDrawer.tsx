@@ -50,7 +50,7 @@ export function ContactDrawer({ isOpen, onClose }: ContactDrawerProps) {
             {/* Name */}
             <div className="space-y-2">
               <p className="text-[10px] font-bold tracking-widest uppercase text-zinc-400">Name</p>
-              <p className="text-xl font-bold font-heading">Fernandez, Ian Faith</p>
+              <p className="text-xl font-bold font-heading">John Mark Caya</p>
             </div>
 
             {/* Phone */}
@@ -58,7 +58,7 @@ export function ContactDrawer({ isOpen, onClose }: ContactDrawerProps) {
               <p className="text-[10px] font-bold tracking-widest uppercase text-zinc-400">Phone Number</p>
               <div className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-zinc-400" />
-                <p className="text-lg font-medium">0999 975 5125</p>
+                <p className="text-lg font-medium">Add Phone Number</p>
               </div>
             </div>
 
@@ -67,7 +67,7 @@ export function ContactDrawer({ isOpen, onClose }: ContactDrawerProps) {
               <p className="text-[10px] font-bold tracking-widest uppercase text-zinc-400">Address</p>
               <div className="flex items-center gap-3">
                 <MapPin className="w-5 h-5 text-zinc-400" />
-                <p className="text-lg font-medium">Poblacion, Cordova, Cebu</p>
+                <p className="text-lg font-medium">Add Address</p>
               </div>
             </div>
 
@@ -76,7 +76,7 @@ export function ContactDrawer({ isOpen, onClose }: ContactDrawerProps) {
               <p className="text-[10px] font-bold tracking-widest uppercase text-zinc-400">Education</p>
               <div className="flex items-start gap-3">
                 <GraduationCap className="w-5 h-5 mt-1 text-zinc-400" />
-                <p className="text-lg font-medium">Currently studying in Cordova Public College</p>
+                <p className="text-lg font-medium">Add Education Info</p>
               </div>
             </div>
 
@@ -86,10 +86,10 @@ export function ContactDrawer({ isOpen, onClose }: ContactDrawerProps) {
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-zinc-400" />
                 <a 
-                  href="mailto:fernandezianfaith@gmail.com" 
+                  href="mailto:johnmarkcaya222@gmail.com" 
                   className="text-lg font-medium hover:underline decoration-zinc-400 break-all"
                 >
-                  fernandezianfaith@gmail.com
+                  johnmarkcaya222@gmail.com
                 </a>
               </div>
             </div>

@@ -58,16 +58,16 @@ export default function Home() {
           </div>
 
           <div className="flex items-center justify-center md:justify-start gap-6 pt-4">
-            <a href="https://www.facebook.com/ianfaith.fernandez.7" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-black dark:hover:text-white transition-colors">
+            <a href="https://www.facebook.com/JMarkCaya" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-black dark:hover:text-white transition-colors">
               <Facebook className="w-5 h-5" />
             </a>
-            <a href="https://github.com/Hex-artisan" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-black dark:hover:text-white transition-colors">
+            <a href="https://github.com/Markoy2022" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-black dark:hover:text-white transition-colors">
               <Github className="w-5 h-5" />
             </a>
             <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-black dark:hover:text-white transition-colors">
               <Instagram className="w-5 h-5" />
             </a>
-            <a href="mailto:fernandezianfaith@gmail.com" className="text-zinc-400 hover:text-black dark:hover:text-white transition-colors">
+            <a href="mailto:johnmarkcaya222@gmail.com" className="text-zinc-400 hover:text-black dark:hover:text-white transition-colors">
               <Mail className="w-5 h-5" />
             </a>
           </div>

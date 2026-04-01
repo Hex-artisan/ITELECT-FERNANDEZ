@@ -34,7 +34,7 @@ const Navbar = () => {
         href="/" 
         className="text-2xl md:text-3xl font-bold font-heading tracking-tighter hover:opacity-70 transition-opacity z-50"
       >
-        FERNANDEZ
+        CAYA
       </Link>
       
       <div className="flex items-center space-x-2 md:space-x-8">

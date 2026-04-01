@@ -42,7 +42,7 @@ export default function About() {
           <div className="relative w-full max-w-[320px] md:max-w-md aspect-square bg-zinc-100 dark:bg-zinc-800 rounded-lg overflow-hidden border border-black/5">
             <Image 
               src="/profile.jpeg" 
-              alt="About Fernandez" 
+              alt="About Caya" 
               fill 
               className="object-cover"
               priority
