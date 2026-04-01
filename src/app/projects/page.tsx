@@ -1,80 +1,89 @@
 import Image from "next/image";
-
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { ChevronRight, ExternalLink } from "lucide-react";
 
 export default function Projects() {
   const projects = [
-    {
-      id: 1,
-      title: "CAYA-OS PORTFOLIO",
-      description: "My personal developer portfolio, built with React (via Vite) for fast development and smooth performance. It serves as a platform to showcase projects, skills, and contact details with a clean and modern design.",
-      image: "/profile.jpg",
-      tags: ["React", "Vite", "Tailwind CSS"],
-      github: "https://github.com/Markoy2022/caya-os.git",
-      demo: "https://caya-portfolio.vercel.app/"
-    }
+    { 
+      id: 1, 
+      title: "App Dev Project IAN", 
+      image: "/ai.jpg",
+      link: "https://github.com/Hex-artisan/App-dev-project-IAN.git"
+    },
+    { 
+      id: 2, 
+      title: "APPSSS", 
+      image: "/work.jpg",
+      link: "https://github.com/Hex-artisan/APPSSS.git"
+    },
+    { 
+      id: 3, 
+      title: "Vercel Portfolio", 
+      image: "/cat.jpg",
+      link: "https://ianfaith-portfolio.vercel.app/about"
+    },
   ];
 
   return (
-    <div className="container mx-auto px-8 py-16 max-w-7xl">
-      <header className="mb-20 text-center space-y-6">
-        <h1 className="text-5xl md:text-7xl font-bold tracking-tighter dark:text-white uppercase">PROJECTS</h1>
-        <div className="w-32 h-2 bg-[#BFC873] dark:bg-[#6b732e] mx-auto rounded-full transition-colors duration-300"></div>
-        <p className="text-zinc-500 dark:text-zinc-400 text-lg max-w-2xl mx-auto">
-          A collection of digital experiences I&apos;ve built from the ground up, combining logic with clean aesthetics.
-        </p>
-      </header>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-        {projects.map((project) => (
-          <Card key={project.id} className="bg-zinc-100 dark:bg-zinc-800 border-none rounded-[3rem] overflow-hidden group hover:shadow-2xl transition-all duration-700">
-            <div className="relative h-72 md:h-96 w-full overflow-hidden">
-              <Image 
-                src={project.image} 
-                alt={project.title} 
-                fill 
-                className="object-cover transition-transform duration-700 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col items-center justify-center gap-6">
-                <a 
-                  href={project.github} 
-                  className="text-xs font-bold tracking-[0.3em] text-white hover:text-[#BFC873] dark:hover:text-[#6b732e] transition-all transform translate-y-4 group-hover:translate-y-0"
-                >
-                  VIEW GITHUB
-                </a>
-                <div className="w-12 h-[1px] bg-white/20"></div>
-                <a 
-                  href={project.demo} 
-                  className="text-xs font-bold tracking-[0.3em] text-white hover:text-[#BFC873] dark:hover:text-[#6b732e] transition-all transform translate-y-4 group-hover:translate-y-0 delay-75"
-                >
-                  LIVE DEMO
-                </a>
-              </div>
+    <div className="flex flex-col w-full min-h-[calc(100vh-80px)] bg-white dark:bg-[#121212]">
+      <section className="container mx-auto px-6 md:px-8 py-12 md:py-20 flex flex-col md:flex-row items-start justify-between gap-12 md:gap-16">
+        {/* Left Side: Content */}
+        <div className="w-full md:w-1/3 flex flex-col items-center md:items-start text-center md:text-left space-y-8 md:space-y-10">
+          <div className="space-y-6 w-full">
+            <h1 className="text-4xl md:text-5xl font-bold font-heading tracking-tight text-black dark:text-white">
+              My Latest Projects
+            </h1>
+            
+            <div className="space-y-2 opacity-30">
+              <div className="w-full h-[1px] bg-black dark:bg-white"></div>
+              <div className="w-full h-[1px] bg-black dark:bg-white"></div>
+              <div className="w-full h-[1px] bg-black dark:bg-white"></div>
+              <div className="w-3/4 h-[1px] bg-black dark:bg-white mx-auto md:ml-0"></div>
             </div>
-            <CardHeader className="p-10 pb-4">
-              <div className="flex flex-wrap gap-2 mb-4">
-                {project.tags.map(tag => (
-                  <span key={tag} className="px-3 py-1 bg-white/50 dark:bg-white/10 text-[10px] font-bold tracking-widest rounded-full uppercase dark:text-white/70">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-              <CardTitle className="text-2xl md:text-3xl font-bold tracking-tight dark:text-white">
-                {project.title}
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="px-10 pb-10">
-              <p className="text-zinc-500 dark:text-zinc-400 leading-relaxed mb-8">
-                {project.description}
-              </p>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-1 bg-[#BFC873] dark:bg-[#6b732e] rounded-full transition-colors duration-300"></div>
-                <span className="text-xs font-bold tracking-widest uppercase dark:text-white">EXPLORE PROJECT</span>
-              </div>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
+
+            <p className="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed max-w-xs mx-auto md:ml-0">
+              A curated selection of my most recent work, showcasing expertise in 
+              front-end development, UI design, and interactive user experiences.
+            </p>
+          </div>
+        </div>
+
+        {/* Right Side: Grid */}
+        <div className="w-full md:w-2/3 flex flex-col items-center gap-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full">
+            {projects.map((project) => (
+              <a 
+                key={project.id} 
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative aspect-video bg-zinc-100 dark:bg-zinc-800 rounded-lg overflow-hidden border border-black/5 group cursor-pointer"
+              >
+                <Image 
+                  src={project.image} 
+                  alt={project.title} 
+                  fill 
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-black/40 md:opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white p-4">
+                  <h3 className="text-lg font-bold text-center mb-2">{project.title}</h3>
+                  <ExternalLink className="w-6 h-6" />
+                </div>
+              </a>
+            ))}
+          </div>
+
+          {/* Slider Indicator */}
+          <div className="flex items-center gap-3">
+            <div className="w-2 h-2 rounded-full bg-zinc-300 dark:bg-zinc-700"></div>
+            <div className="w-2 h-2 rounded-full bg-zinc-300 dark:bg-zinc-700"></div>
+            <div className="w-2 h-2 rounded-full bg-zinc-300 dark:bg-zinc-700"></div>
+            <div className="flex items-center justify-center w-10 h-5 bg-zinc-900 dark:bg-white rounded-full ml-2">
+              <div className="w-1.5 h-1.5 rounded-full bg-white dark:bg-black translate-x-1"></div>
+              <ChevronRight className="w-3 h-3 text-white dark:text-black translate-x-1" />
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

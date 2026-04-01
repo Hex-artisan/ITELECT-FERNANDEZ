@@ -6,8 +6,8 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Sidebar } from "@/components/Sidebar";
 
 export const metadata: Metadata = {
-  title: "CAYA PORTFOLIO",
-  description: "CAYA's personal portfolio",
+  title: "FERNANDEZ PORTFOLIO",
+  description: "FERNANDEZ's personal portfolio",
 };
 
 export default function RootLayout({
@@ -21,7 +21,7 @@ export default function RootLayout({
       suppressHydrationWarning
       className="h-full antialiased font-sans"
     >
-      <body className="min-h-screen flex flex-col bg-[#E5E5E5] dark:bg-[#363737] text-black dark:text-white transition-colors duration-300 selection:bg-black dark:selection:bg-white selection:text-white dark:selection:text-black">
+      <body className="min-h-screen flex flex-col bg-white dark:bg-[#121212] text-black dark:text-white transition-colors duration-300 selection:bg-black dark:selection:bg-white selection:text-white dark:selection:text-black">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

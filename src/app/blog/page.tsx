@@ -1,84 +1,74 @@
-import Image from "next/image";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Calendar, User } from "lucide-react";
+"use client";
+
+import React from "react";
 
 export default function Blog() {
+  const [expandedId, setExpandedId] = React.useState<number | null>(null);
+
   const posts = [
     {
       id: 1,
-      title: "My Design Journey",
-      excerpt: "Exploring the intersection of creativity and functionality in web design.",
-      date: "March 27, 2026",
-      author: "CAYA",
-      category: "Design",
-      image: "/profile.jpg"
+      title: "The Art of Minimalist Design",
+      excerpt: "Exploring how less can be more in modern web interfaces, focusing on user experience and clarity.",
+      fullContent: "Minimalism is not about a lack of something. It's about the perfect amount of something. In web design, this means stripping away the unnecessary elements and focusing on what truly matters to the user. By using negative space, clear typography, and a limited color palette, we can create interfaces that are not only beautiful but also highly functional and easy to navigate."
     },
     {
       id: 2,
-      title: "Building with Next.js",
-      excerpt: "Why Next.js is the perfect choice for modern portfolio websites.",
-      date: "March 25, 2026",
-      author: "CAYA",
-      category: "Development",
-      image: "/profile.jpg"
+      title: "Why Typography Matters",
+      excerpt: "How choosing the right font can change the entire feel of your digital products and brand identity.",
+      fullContent: "Typography is the silent ambassador of your brand. It conveys emotion, establishes hierarchy, and significantly impacts readability. Whether it's a sturdy serif for a traditional look or a clean sans-serif for a modern vibe, the fonts you choose tell a story before the user even reads a single word. Good typography isn't just about looking good; it's about guiding the user through your content effortlessly."
     },
     {
       id: 3,
-      title: "The Power of Tailwind CSS",
-      excerpt: "How utility-first CSS changed my development workflow forever.",
-      date: "March 20, 2026",
-      author: "CAYA",
-      category: "Tools",
-      image: "/profile.jpg"
+      title: "Building Scalable Web Apps",
+      excerpt: "Best practices for creating performant and maintainable applications using modern frameworks and tools.",
+      fullContent: "In today's fast-paced digital world, scalability is key. Building a web app that can handle growth requires careful planning and the right choice of technology. Using frameworks like Next.js, along with modular component architecture and efficient state management, allows developers to build applications that are easy to maintain and can scale seamlessly as the user base grows. Performance optimization and clean code are the foundations of any successful scalable application."
     }
   ];
 
   return (
-    <div className="container mx-auto px-8 py-16 max-w-6xl">
-      <header className="mb-16 text-center space-y-4">
-        <h1 className="text-4xl md:text-5xl font-bold tracking-tighter dark:text-white uppercase">BLOG</h1>
-        <div className="w-24 h-1.5 bg-[#BFC873] dark:bg-[#6b732e] mx-auto rounded-full transition-colors duration-300"></div>
-        <p className="text-zinc-500 dark:text-zinc-400 max-w-lg mx-auto">
-          Insights, tutorials, and personal stories about design and development.
-        </p>
-      </header>
+    <div className="flex flex-col w-full min-h-[calc(100vh-80px)] bg-white dark:bg-[#121212]">
+      <section className="container mx-auto px-6 md:px-8 py-12 md:py-20 flex flex-col items-start space-y-12">
+        <h1 className="text-5xl md:text-6xl font-bold font-heading tracking-tight text-black dark:text-white mb-8">
+          Blog
+        </h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-        {posts.map((post) => (
-          <Card key={post.id} className="bg-white dark:bg-zinc-800 border-black/5 dark:border-white/5 overflow-hidden group hover:shadow-2xl transition-all duration-500 rounded-3xl">
-            <div className="relative h-56 w-full overflow-hidden">
-              <Image 
-                src={post.image} 
-                alt={post.title} 
-                fill 
-                className="object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute top-4 left-4">
-                <span className="px-3 py-1 bg-[#BFC873] dark:bg-[#6b732e] text-white text-[10px] font-bold tracking-widest rounded-full uppercase transition-colors duration-300">
-                  {post.category}
-                </span>
+        <div className="flex flex-col gap-8 w-full max-w-4xl">
+          {posts.map((post) => {
+            const isExpanded = expandedId === post.id;
+            return (
+              <div 
+                key={post.id} 
+                className="group relative p-6 md:p-10 bg-zinc-100 dark:bg-zinc-800/50 rounded-2xl border border-black/5 flex flex-col gap-8 transition-all hover:bg-zinc-200 dark:hover:bg-zinc-800"
+              >
+                <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 md:gap-8">
+                  <div className="flex-1 space-y-4">
+                    <h2 className="text-2xl font-bold text-black dark:text-white font-heading">
+                      {post.title}
+                    </h2>
+                    <div className="space-y-2 opacity-30">
+                      <div className="w-full h-[1px] bg-black dark:bg-white"></div>
+                      <div className="w-full h-[1px] bg-black dark:bg-white"></div>
+                      <div className="w-full h-[1px] bg-black dark:bg-white"></div>
+                      <div className="w-3/4 h-[1px] bg-black dark:bg-white"></div>
+                    </div>
+                    <p className="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed">
+                      {isExpanded ? post.fullContent : post.excerpt}
+                    </p>
+                  </div>
+
+                  <button 
+                    onClick={() => setExpandedId(isExpanded ? null : post.id)}
+                    className="w-full md:w-auto px-6 py-2.5 bg-black text-white dark:bg-white dark:text-black rounded-full text-[10px] font-bold tracking-widest uppercase whitespace-nowrap hover:opacity-80 transition-opacity"
+                  >
+                    {isExpanded ? "Show Less" : "Read More"}
+                  </button>
+                </div>
               </div>
-            </div>
-            <CardHeader className="space-y-3 pt-6">
-              <div className="flex items-center gap-4 text-[10px] text-zinc-400 font-medium uppercase tracking-wider">
-                <span className="flex items-center gap-1.5"><Calendar className="w-3 h-3" /> {post.date}</span>
-                <span className="flex items-center gap-1.5"><User className="w-3 h-3" /> {post.author}</span>
-              </div>
-              <CardTitle className="text-xl font-bold leading-tight group-hover:text-[#BFC873] dark:group-hover:text-[#6b732e] transition-colors">
-                {post.title}
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-6">
-                {post.excerpt}
-              </p>
-              <button className="text-xs font-bold tracking-widest text-black dark:text-white border-b-2 border-[#BFC873] dark:border-[#6b732e] pb-1 hover:border-black dark:hover:border-white transition-all">
-                READ MORE
-              </button>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
+            );
+          })}
+        </div>
+      </section>
     </div>
   );
 }
